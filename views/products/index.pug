@@ -1,0 +1,29 @@
+extends ../layouts/common
+
+block content
+	h1
+		span.mr-3 Products
+
+		a(href="/products/create", class="btn btn-primary") New
+
+	form(action="", method="GET", class="d-flex")
+		input(type='text', name='q', class="form-control mr-3", value=values ? values.q : '')
+		button(class="btn btn-primary") Seach
+
+	table.table
+		tr
+			th Avatar
+			th Name
+			th Phone
+			th Action
+
+		//- each user in users
+		tr
+			td
+				img(src='', with="64", height="64")
+			td
+			td
+			td
+				a.btn.btn-light.mr-2(href="/products/view") View
+				a.btn.btn-success.mr-2(href="/products/update/1" ) Update
+				a.btn.btn-danger.mr-2(href="/products/delete/1") Remove
